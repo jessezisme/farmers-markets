@@ -1,0 +1,15 @@
+{
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true,
+    "arrowParens": "always",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": true,
+    "printWidth": 125,
+    "cssEnable": [
+        "css",
+        "less",
+        "scss",
+        "sass"
+    ]
+}

@@ -1,0 +1,123 @@
+@use 'sass:map';
+@use 'sass:color';
+
+$color-brand: (
+    'th-brand-1': #8ea604,
+    'th-brand-2': #a45104,
+    'th-brand-3': #048ca4,
+);
+
+/*=============================================
+=            light theme            =
+=============================================*/
+
+/*----------  standard colors  ----------*/
+$color-standard: (
+    'th-std-hc': #000,
+    'th-std-lc': #fff,
+    'th-std-grey-50': darken(#fff, 5%),
+    'th-std-grey-100': darken(#fff, 10%),
+    'th-std-grey-200': darken(#fff, 20%),
+    'th-std-grey-300': darken(#fff, 30%),
+    'th-std-grey-400': darken(#fff, 40%),
+    'th-std-grey-500': darken(#fff, 50%),
+    'th-std-grey-600': darken(#fff, 60%),
+    'th-std-grey-700': darken(#fff, 70%),
+    'th-std-grey-800': darken(#fff, 80%),
+    'th-std-grey-900': darken(#fff, 90%),
+    'th-std-grey-950': darken(#fff, 95%),
+);
+/*----------  end standard colors  ----------*/
+
+/*----------  base colors  ----------*/
+$color-base: (
+    // text
+    'th-text': lighten(#000, 5%),
+    'th-text-inv': darken(#fff, 5%),
+    // background
+    'th-bg': #fff,
+    'th-bg-inv': darken(#fff, 95%),
+    // links
+    'th-link': darken(function-base-color(map.get($color-brand, 'th-brand-1')), 30%),
+    'th-link--hover': darken(function-base-color(map.get($color-brand, 'th-brand-1')), 45%),
+    'th-link-accent': function-base-color(map.get($color-brand, 'th-brand-2')),
+    'th-link-inv': lighten(function-base-color(map.get($color-brand, 'th-brand-1')), 30%),
+    'th-link-inv--hover': lighten(function-base-color(map.get($color-brand, 'th-brand-1')), 45%),
+    // buttons
+    'th-btn-text': #f2f2f2,
+    'th-btn-bg': darken(function-base-color(map.get($color-brand, 'th-brand-1')), 30%),
+    'th-btn-bg--hover': darken(darken(function-base-color(map.get($color-brand, 'th-brand-1')), 30%), 5%)
+);
+
+/*----------  end base colors  ----------*/
+
+/*----------  brand shades  ----------*/
+/*
+    Generated brand color shades ranging from light to dark    
+*/
+$color-primary-shades: ();
+@each $colorKey, $colorValue in $color-brand {
+    $color-primary-shades: map-merge($color-primary-shades, function-color-shades($colorValue, $colorKey, light));
+}
+/*----------  end brand shades  ----------*/
+
+/*----------  color states  ----------*/
+/* success */
+$color-state-success-base: function-base-color(#3c763d);
+$color-state-success: (
+    // text
+    'th-success-text': darken($color-state-success-base, 30%),
+    'th-success-text-inv': lighten($color-state-success-base, 30%),
+    // background
+    'th-success-bg': darken($color-state-success-base, 30%),
+    'th-success-bg-inv': lighten($color-state-success-base, 30%),
+    // accent
+    'th-success-accent': darken($color-state-success-base, 30%),
+    'th-success-accent-inv': lighten($color-state-success-base, 30%)
+);
+
+/* alert */
+$color-state-alert-base: function-base-color(#a94442);
+$color-state-alert: (
+    // text
+    'th-alert-text': darken($color-state-alert-base, 30%),
+    'th-alert-text-inv': lighten($color-state-alert-base, 30%),
+    // background
+    'th-alert-bg': darken($color-state-alert-base, 30%),
+    'th-alert-bg-inv': lighten($color-state-alert-base, 30%),
+    // accent
+    'th-alert-accent': darken($color-state-alert-base, 30%),
+    'th-alert-accent-inv': lighten($color-state-alert-base, 30%)
+);
+
+$color-states: function-map-collect($color-state-success, $color-state-alert);
+
+/*----------  end color states  ----------*/
+
+/*----------  complete color map  ----------*/
+$color-theme-light: function-map-collect($color-base, $color-standard, $color-primary-shades, $color-states);
+/*----------  /end complete color map  ----------*/
+
+/*=====  End of light theme  ======*/
+
+/*=============================================
+=            dark theme            =
+=============================================*/
+$color-theme-dark: ();
+
+@each $key, $value in $color-theme-light {
+    $color-theme-dark: map-merge(
+        $color-theme-dark,
+        (
+            $key: invert-color-lightness($value),
+        )
+    );
+}
+
+body.dark {
+    @each $key, $value in $color-theme-dark {
+        --#{$key}: #{$value};
+    }
+}
+
+/*=====  End of dark theme  ======*/

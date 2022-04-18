@@ -1,0 +1,79 @@
+/*=============================================
+=            Font families            =
+=============================================*/
+.g-ff {
+    @include convert-sass-map($font-family) using ($value) {
+        font-family: $value;
+    }
+}
+
+/*=====  End of Font families  ======*/
+
+/*=============================================
+=            Font sizing            =
+=============================================*/
+.g-fs {
+    @include convert-sass-map($font-size) using ($value) {
+        font-size: $value;
+    }
+}
+/*=====  End of Font sizing  ======*/
+
+/*=============================================
+=            Line height            =
+=============================================*/
+.g-lh {
+    @include convert-sass-map($line-height) using ($value) {
+        line-height: $value;
+    }
+}
+/*=====  End of Line height  ======*/
+
+/*=============================================
+=            headings            =
+=============================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin: 0;
+    padding: 0;
+}
+h1,
+.g-h1 {
+    font-size: map-get($font-size, font-size-4xl);
+}
+h2,
+.g-h2 {
+    font-size: map-get($font-size, font-size-3xl);
+}
+h3,
+.g-h3 {
+    font-size: map-get($font-size, font-size-2xl);
+}
+h4,
+.g-h4 {
+    font-size: map-get($font-size, font-size-xl);
+}
+h5,
+.g-h5 {
+    font-size: map-get($font-size, font-size-lg);
+}
+h6,
+.g-h6 {
+    font-size: map-get($font-size, font-size-md);
+}
+p {
+    font-size: 1rem;
+    margin: 0.5em 0;
+}
+
+/*=====  End of headings  ======*/

@@ -1,0 +1,32 @@
+/*=============================================
+=            icons            =
+=============================================*/
+.g-icon {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    background: var(--c-base-text-1);
+    // background-color: var(--c-base-text-1);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    // live link - lightning bolt icon
+    &.bolt {
+        mask-image: url('~/assets/img/icon/icon-bolt.svg');
+    }
+    // github
+    &.github {
+        mask-image: url('~/assets/img/icon/icon-github.svg');
+    }
+    // code
+    &.code {
+        mask-image: url('~/assets/img/icon/icon-code.svg');
+    }
+    // search
+    &.search {
+        mask-image: url('~/assets/img/icon/icon-search.svg');
+    }
+}
+
+/*=====  End of icons  ======*/

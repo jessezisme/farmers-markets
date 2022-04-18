@@ -1,0 +1,15 @@
+.g-btn-1 {
+    background: var(--th-btn-bg);
+    color: var(--th-btn-text);
+    font-size: 1em;
+    padding: 0.5rem 1rem;
+    border: none;
+
+    .g-icon {
+        background: var(--th-btn-text);
+    }
+
+    &:hover {
+        background: var(--th-btn-bg--hover);
+    }
+}

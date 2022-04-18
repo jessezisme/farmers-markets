@@ -1,0 +1,69 @@
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:math';
+
+@function function-base-color($colorArg) {
+    $lightness: lightness($colorArg);
+    $lightnessDecimal: math.div(math.div($lightness, 100%) * 1000, 1000);
+    $lightnessPercent: $lightnessDecimal * 100%;
+    $lightnessAdjustPercent: 50% - $lightnessPercent;
+
+    @return color.adjust($colorArg, $lightness: $lightnessAdjustPercent);
+}
+
+@function invert-color-lightness($colorArg) {
+    $currentLightness: lightness($colorArg);
+    $lightnessAdjust: (50% + (50% - $currentLightness)) - $currentLightness;
+    $finalColor: color.adjust($colorArg, $lightness: $lightnessAdjust);
+
+    @return $finalColor;
+}
+
+@function function-color-shades($color, $colorKeyName, $mode) {
+    $baseColor: function-base-color($color);
+
+    $modeLight: (
+        '#{$colorKeyName}': $color,
+        '#{$colorKeyName}-50': color.adjust($baseColor, $lightness: 45%),
+        '#{$colorKeyName}-100': color.adjust($baseColor, $lightness: 40%),
+        '#{$colorKeyName}-200': color.adjust($baseColor, $lightness: 30%),
+        '#{$colorKeyName}-300': color.adjust($baseColor, $lightness: 20%),
+        '#{$colorKeyName}-400': color.adjust($baseColor, $lightness: 10%),
+        '#{$colorKeyName}-500': $baseColor,
+        '#{$colorKeyName}-600': color.adjust($baseColor, $lightness: -10%),
+        '#{$colorKeyName}-700': color.adjust($baseColor, $lightness: -20%),
+        '#{$colorKeyName}-800': color.adjust($baseColor, $lightness: -30%),
+        '#{$colorKeyName}-900': color.adjust($baseColor, $lightness: -40%),
+    );
+
+    $modeDark: (
+        '#{$colorKeyName}': $color,
+        '#{$colorKeyName}-50': color.adjust($baseColor, $lightness: -45%),
+        '#{$colorKeyName}-100': color.adjust($baseColor, $lightness: -40%),
+        '#{$colorKeyName}-200': color.adjust($baseColor, $lightness: -30%),
+        '#{$colorKeyName}-300': color.adjust($baseColor, $lightness: -20%),
+        '#{$colorKeyName}-400': color.adjust($baseColor, $lightness: -10%),
+        '#{$colorKeyName}-500': $baseColor,
+        '#{$colorKeyName}-600': color.adjust($baseColor, $lightness: 10%),
+        '#{$colorKeyName}-700': color.adjust($baseColor, $lightness: 20%),
+        '#{$colorKeyName}-800': color.adjust($baseColor, $lightness: 30%),
+        '#{$colorKeyName}-900': color.adjust($baseColor, $lightness: 40%),
+    );
+
+    @if ($mode == light) {
+        @return $modeLight;
+    } @else if ($mode == dark) {
+        @return $modeDark;
+    } @else {
+        @error 'Mode argument required for getColorShades function';
+    }
+}
+
+@function function-map-collect($maps...) {
+    $collection: ();
+
+    @each $map in $maps {
+        $collection: map-merge($collection, $map);
+    }
+    @return $collection;
+}

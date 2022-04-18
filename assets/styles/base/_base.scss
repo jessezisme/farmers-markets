@@ -1,0 +1,57 @@
+@import 'utility';
+@import 'fonts';
+@import 'icons';
+@import 'typography';
+@import 'buttons';
+@import 'theme';
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --animation-duration: 0.001s;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--c-text-1);
+    font-family: map-get($font-family, primary);
+    line-height: map-get($line-height, md);
+    position: relative;
+    background: var(--c-bg-1);
+}
+
+/*=============================================
+=            pointer states            =
+=============================================*/
+a,
+input,
+textarea,
+button,
+label {
+    cursor: pointer;
+
+    &.disabled,
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+/*=====  End of pointer states  ======*/

@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use 'sass:color';
+
+@mixin media-breakpoint-up($size) {
+    @if map-has-key($grid, $size) != true {
+        @error 'Size argument is not a valid breakpoint abbreviation name';
+    }
+    @media all and (min-width: map-get($grid, $size)) {
+        @content;
+    }
+}
+
+@mixin make-responsive {
+    & {
+        @content;
+    }
+    @each $gridKey, $gridValue in $grid {
+        @include media-breakpoint-up(#{$gridKey}) {
+            &--#{$gridKey} {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin convert-sass-map($map) {
+    @each $key, $value in $map {
+        &-#{$key} {
+            @content ($value);
+        }
+    }
+    @each $gridKey, $gridValue in $grid {
+        @each $key, $value in $map {
+            @include media-breakpoint-up(#{$gridKey}) {
+                &-#{$key}--#{$gridKey} {
+                    @content ($value);
+                }
+            }
+        }
+    }
+}

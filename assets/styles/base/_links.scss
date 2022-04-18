@@ -1,0 +1,26 @@
+/*=============================================
+=            links            =
+=============================================*/
+a.g-link-1 {
+    color: var(--c-base-link-1);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--c-base-link-1-accent);
+
+    &:hover {
+        color: var(--c-base-link-1--hover);
+    }
+}
+
+a.g-link-1-inv {
+    color: var(--c-base-link-1-inv);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--c-base-link-1-accent);
+
+    &:hover {
+        color: var(--c-base-link-1-inv--hover);
+    }
+}
+
+/*=====  End of links  ======*/
