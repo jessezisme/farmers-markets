@@ -25,7 +25,7 @@ const requestLocationInstance = axios.create({
     headers: {
         'Content-Type': 'application/json; charset=utf-8',
     },
-    baseURL: 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/',
+    baseURL: 'https://search.ams.usda.gov/farmersmarkets/v1/data.svc/',
     method: 'get',
     responseType: 'json',
     timeout: 15000,
@@ -96,7 +96,7 @@ const requestMarketDetailInstance = axios.create({
     headers: {
         'Content-Type': 'application/json; charset=utf-8',
     },
-    baseURL: 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail',
+    baseURL: 'https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail',
     method: 'get',
     responseType: 'json',
 });
