@@ -66,28 +66,28 @@ $color-primary-shades: ();
 $color-state-success-base: function-base-color(#3c763d);
 $color-state-success: (
     // text
-    'th-success-text': darken($color-state-success-base, 30%),
-    'th-success-text-inv': lighten($color-state-success-base, 30%),
+    'th-success-text': darken($color-state-success-base, 25%),
+    'th-success-text-inv': lighten($color-state-success-base, 25%),
     // background
-    'th-success-bg': darken($color-state-success-base, 30%),
-    'th-success-bg-inv': lighten($color-state-success-base, 30%),
+    'th-success-bg': darken($color-state-success-base, 25%),
+    'th-success-bg-inv': lighten($color-state-success-base, 25%),
     // accent
-    'th-success-accent': darken($color-state-success-base, 30%),
-    'th-success-accent-inv': lighten($color-state-success-base, 30%)
+    'th-success-accent': darken($color-state-success-base, 25%),
+    'th-success-accent-inv': lighten($color-state-success-base, 25%)
 );
 
 /* alert */
 $color-state-alert-base: function-base-color(#a94442);
 $color-state-alert: (
     // text
-    'th-alert-text': darken($color-state-alert-base, 30%),
-    'th-alert-text-inv': lighten($color-state-alert-base, 30%),
+    'th-alert-text': darken($color-state-alert-base, 25%),
+    'th-alert-text-inv': lighten($color-state-alert-base, 25%),
     // background
-    'th-alert-bg': darken($color-state-alert-base, 30%),
-    'th-alert-bg-inv': lighten($color-state-alert-base, 30%),
+    'th-alert-bg': darken($color-state-alert-base, 25%),
+    'th-alert-bg-inv': lighten($color-state-alert-base, 25%),
     // accent
-    'th-alert-accent': darken($color-state-alert-base, 30%),
-    'th-alert-accent-inv': lighten($color-state-alert-base, 30%)
+    'th-alert-accent': darken($color-state-alert-base, 25%),
+    'th-alert-accent-inv': lighten($color-state-alert-base, 25%)
 );
 
 $color-states: function-map-collect($color-state-success, $color-state-alert);
@@ -112,12 +112,6 @@ $color-theme-dark: ();
             $key: invert-color-lightness($value),
         )
     );
-}
-
-body.dark {
-    @each $key, $value in $color-theme-dark {
-        --#{$key}: #{$value};
-    }
 }
 
 /*=====  End of dark theme  ======*/

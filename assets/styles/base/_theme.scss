@@ -23,11 +23,25 @@
     @each $key, $value in $color-theme-light {
         --#{$key}: #{$value};
     }
+    // inverted mode
+    &[data-theme-invert],
+    & [data-theme-invert] {
+        @each $key, $value in $color-theme-dark {
+            --#{$key}: #{$value};
+        }
+    }
 }
 
 /* theme: dark */
 [data-theme='dark'] {
     @each $key, $value in $color-theme-dark {
         --#{$key}: #{$value};
+    }
+    // inverted mode
+    &[data-theme-invert],
+    & [data-theme-invert] {
+        @each $key, $value in $color-theme-light {
+            --#{$key}: #{$value};
+        }
     }
 }

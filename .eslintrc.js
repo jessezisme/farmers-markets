@@ -8,6 +8,8 @@ module.exports = {
     plugins: [],
     // add your custom rules here
     rules: {
+        '@typescript-eslint/no-unused-vars': ['off'],
         'vue/attributes-order': ['off'],
+        'vue/script-setup-uses-vars': ['error'],
     },
 };

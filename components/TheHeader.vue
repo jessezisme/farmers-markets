@@ -5,11 +5,11 @@
                 <div class="header_home">
                     <a class="header_home-link g-link-1-inv" href="/" @click.prevent="clickLogo">
                         <img class="header_home-logo" src="~/assets/img/logo/logo.svg" alt="Find a Market" />
-                        Find a Market
+                        Farmers Market
                     </a>
                 </div>
                 <div class="header_links">
-                    <NuxtLink class="g-link-1-inv" to="/">search</NuxtLink>
+                    <NuxtLink class="g-link-1-inv" to="/search">search</NuxtLink>
                 </div>
             </div>
         </nav>
@@ -20,7 +20,7 @@
     import Vue from 'vue';
 
     export default Vue.extend({
-        name: 'IndexPage',
+        name: 'TheHeader',
 
         methods: {
             clickLogo() {

@@ -1,15 +1,24 @@
-.g-btn-1 {
-    background: var(--th-btn-bg);
-    color: var(--th-btn-text);
+@mixin buttonBase {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1em;
     padding: 0.5rem 1rem;
     border: none;
+    font-weight: bold;
+}
 
-    .g-icon {
-        background: var(--th-btn-text);
-    }
+.g-btn-1 {
+    @include buttonBase();
+
+    background: var(--th-btn-bg);
+    color: var(--th-btn-text);
 
     &:hover {
         background: var(--th-btn-bg--hover);
+    }
+
+    .g-icon {
+        background: var(--th-btn-text);
     }
 }

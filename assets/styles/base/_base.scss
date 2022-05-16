@@ -31,11 +31,23 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    color: var(--c-text-1);
+    color: var(--th-text);
     font-family: map-get($font-family, primary);
     line-height: map-get($line-height, md);
     position: relative;
-    background: var(--c-bg-1);
+    background: var(--th-bg);
+}
+
+a {
+    color: var(--th-link);
+    text-decoration: underline 2px solid var(--th-link); 
+    text-underline-offset: 1px;
+
+    &:hover {
+        color: var(-th-link--hover);
+        text-decoration: underline 2px solid var(--th-link-accent);
+        text-underline-offset: 1px; 
+    }
 }
 
 /*=============================================

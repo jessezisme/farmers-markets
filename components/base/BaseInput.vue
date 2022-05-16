@@ -1,5 +1,5 @@
 <template>
-    <div class="root input">
+    <div class="input">
         <label class="g-pb-2" :class="{ 'g-sr-only': hideLabel }" :for="uniqueID">{{ label }}</label>
         <div class="input_row">
             <input
@@ -18,7 +18,7 @@
             </template>
         </div>
         <div class="message" role="alert" v-show="message" :id="'message-' + uniqueID">
-            <div :class="{ 'is-error': !isValid }">{{ message }}</div>
+            <div class="g-pt-2 g-pb-4" :class="{ 'is-error': !isValid }">{{ message }}</div>
         </div>
     </div>
 </template>
@@ -73,6 +73,7 @@
         data() {
             return {
                 uniqueID: '',
+                color: 'purple',
             };
         },
         computed: {

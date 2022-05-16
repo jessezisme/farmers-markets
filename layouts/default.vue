@@ -1,10 +1,10 @@
 <template>
-    <div class="app-page">
+    <div class="app-page" data-theme="light">
         <TheHeader class="app-header" />
         <main class="app-main g-container-main">
             <Nuxt />
         </main>
-        <!-- <TheFooter class="app-footer" /> -->
+        <TheFooter class="app-footer" />
     </div>
 </template>
 
