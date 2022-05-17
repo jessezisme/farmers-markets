@@ -2,10 +2,9 @@
 
 [https://findfarmersmarkets.netlify.app](https://findfarmersmarkets.netlify.app)  
 
-<br>
 
 ## About
-This site allows users to search for farmers markets in their area, based on geolocation or zip code. It pulls data from the USDA's Farmers Market API. 
+This project allows users to search for farmers markets based on geolocation or zip code. It pulls data from the USDA's Farmers Market API. 
 
 The technology stack includes:
 - Vue.js (Version 2)
@@ -14,7 +13,6 @@ The technology stack includes:
 - Nuxt
 - Hosted on Netlify
 
-<br>
 
 ## Development Setup
 This project follows the standard nuxt build setup. To get started:
@@ -34,6 +32,4 @@ $ npm run start
 $ npm run generate
 ```
 
-<br>
-
-This project closely follows the standard directory structure for Nuxt projects, which is detailed in the Nuxt [documentation](https://nuxtjs.org).
+The directiory structure closely follows the standard structure for Nuxt projects, which is detailed in the Nuxt [documentation](https://nuxtjs.org).
