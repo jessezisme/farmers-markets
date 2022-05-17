@@ -13,6 +13,7 @@
             />
             <template v-if="inputType === 'search'">
                 <button class="g-btn-1 input_btn" type="submit" @click="searchSubmit">
+                    <span class="g-sr-only">submit search</span>
                     <span class="g-icon search"></span>
                 </button>
             </template>

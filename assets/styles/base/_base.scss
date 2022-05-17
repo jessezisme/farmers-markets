@@ -38,15 +38,20 @@ body {
     background: var(--th-bg);
 }
 
+[data-theme],
+[data-theme-invert] {
+    color: var(--th-text);
+}
+
 a {
     color: var(--th-link);
-    text-decoration: underline 2px solid var(--th-link); 
+    text-decoration: underline 2px solid var(--th-link);
     text-underline-offset: 1px;
 
     &:hover {
         color: var(-th-link--hover);
         text-decoration: underline 2px solid var(--th-link-accent);
-        text-underline-offset: 1px; 
+        text-underline-offset: 1px;
     }
 }
 

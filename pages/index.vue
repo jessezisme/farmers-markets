@@ -33,7 +33,7 @@
                 title: 'Farmers Markets',
                 meta: [
                     {
-                        hid: 'hid-index-desc',
+                        hid: 'description',
                         name: 'description',
                         content: 'Discover Local Farmers Markets in Your Area',
                     },

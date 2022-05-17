@@ -7,19 +7,14 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'farmers-markets',
+        title: 'Farmers Markets',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'Discover Local Farmers Markets' },
             { name: 'format-detection', content: 'telephone=no' },
+            { name: 'theme-color', content: '#2b3201' },
         ],
-        link: [
-            { rel: 'apple-touch-icon', sizes: '180x180', href: '/icon/favicon.ico' },
-            { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icon/favicon-32x32.png' },
-            { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icon/favicon-16x16.png' },
-            { rel: 'manifest', href: '/site.webmanifest' },
-        ],
+        link: [],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
@@ -56,6 +51,19 @@ export default {
     pwa: {
         manifest: {
             lang: 'en',
+        },
+        meta: {
+            name: 'Farmers Markets',
+            theme_color: '#2b3201',
+            author: false,
+            ogTitle: false,
+            ogType: false,
+            ogDescription: false,
+        },
+        icon: {
+            source: 'static/icon/favicon.png',
+            filename: 'favicon.png',
+            sizes: [64, 120, 144, 152, 192, 384, 512],
         },
     },
 

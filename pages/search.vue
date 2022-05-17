@@ -62,28 +62,36 @@
                             <h3 class="g-m-0 g-pb-8 detail_name" tabindex="0">{{ market.marketname }}</h3>
                             <div class="detail_info">
                                 <div class="g-pb-4 detail_info-item">
-                                    <dt>Google Maps Link</dt>
-                                    <dd>
-                                        <a
-                                            class="detail_map-link"
-                                            target="_blank"
-                                            rel="noopener"
-                                            :href="market.GoogleLink"
-                                            >{{ market.GoogleLink }}</a
-                                        >
-                                    </dd>
+                                    <dl>
+                                        <dt>Google Maps Link</dt>
+                                        <dd>
+                                            <a
+                                                class="detail_map-link"
+                                                target="_blank"
+                                                rel="noopener"
+                                                :href="market.GoogleLink"
+                                                >{{ market.GoogleLink }}</a
+                                            >
+                                        </dd>
+                                    </dl>
                                 </div>
                                 <div class="g-pb-4 detail_info-item">
-                                    <dt>Address</dt>
-                                    <dd>{{ market.Address || 'N/A' }}</dd>
+                                    <dl>
+                                        <dt>Address</dt>
+                                        <dd>{{ market.Address || 'N/A' }}</dd>
+                                    </dl>
                                 </div>
                                 <div class="g-pb-4 detail_info-item">
-                                    <dt>Schedule</dt>
-                                    <dd>{{ market.Schedule || 'N/A' }}</dd>
+                                    <dl>
+                                        <dt>Schedule</dt>
+                                        <dd>{{ market.Schedule || 'N/A' }}</dd>
+                                    </dl>
                                 </div>
                                 <div class="detail_info-item">
-                                    <dt>Products</dt>
-                                    <dd>{{ market.Products || 'N/A' }}</dd>
+                                    <dl>
+                                        <dt>Products</dt>
+                                        <dd>{{ market.Products || 'N/A' }}</dd>
+                                    </dl>
                                 </div>
                             </div>
                         </article>
@@ -140,7 +148,7 @@
                 title: 'Farmers Markets | Search',
                 meta: [
                     {
-                        hid: 'hid-search-desc',
+                        hid: 'description',
                         name: 'description',
                         content: 'Search for Local Farmers Markets in Your Area',
                     },
@@ -346,6 +354,7 @@
     .detail a {
         overflow-wrap: break-word;
     }
+    .detail dl,
     .detail dt,
     .detail dd {
         margin: 0;

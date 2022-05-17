@@ -1,7 +1,7 @@
 <template>
-    <footer class="footer" data-theme="dark">
+    <footer class="footer">
         <div class="g-container">
-            <p>
+            <p class="g-fs-sm">
                 Thanks for stopping by. Check out the code for this site on
                 <a href="https://github.com/jessezisme/farmers-markets" target="_blank" rel="noopener">GitHub</a>.
             </p>
@@ -19,8 +19,7 @@
 
 <style lang="scss" scoped>
     .footer {
-        padding: 3rem 0;
-        color: var(--th-text);
-        background: var(--th-brand-1-50);
+        padding: 2rem 0;
+        background: var(--th-brand-1-100);
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="app-page" data-theme="light">
+    <div class="app-page">
         <TheHeader class="app-header" />
         <main class="app-main g-container-main">
             <Nuxt />

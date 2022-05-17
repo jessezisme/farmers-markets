@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header" data-theme="dark">
         <nav class="g-container">
             <div class="header_in">
                 <div class="header_home">
@@ -31,12 +31,8 @@
 </script>
 
 <style lang="scss" scoped>
-    a {
-        color: var(--th-link-inv);
-    }
     .header {
-        background: var(--th-brand-1-900);
-        color: var(--th-text-inv);
+        background: var(--th-brand-1-100);
     }
     .header_in {
         display: flex;
